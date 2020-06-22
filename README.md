@@ -13,8 +13,12 @@
 Build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
 # Technologies
-* HTML5             * CSS           * BeautifulSoup
-* Pandas            * Splinter      * MongoDB
+* HTML5             
+* CSS           
+* BeautifulSoup
+* Pandas            
+* Splinter      
+* MongoDB
 
 # Process
 
