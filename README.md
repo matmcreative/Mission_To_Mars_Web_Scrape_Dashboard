@@ -1,6 +1,6 @@
 # Web Scraping Challenge - Mission to Mars
 
-<img src="mission_to_mars/Images/mission_to_mars.png" width=400 align=right>
+<img src="mission_to_mars/Images/mission_to_mars.png" width=350 align=right>
 
 ## Table of Contents
 * [Objective](#Objective)
