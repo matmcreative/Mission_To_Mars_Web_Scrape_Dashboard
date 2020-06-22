@@ -1,8 +1,15 @@
 # Web Scraping Challenge - Mission to Mars
 
-![mission_to_mars](mission_to_mars/Images/mission_to_mars.png)
+<img src="mission_to_mars/Images/mission_to_mars.png" width=400 align=right>
 
-Build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page. The following outlines what you need to do.
+## Table of Contents
+* [Objective](#Objective)
+* [Technologies](#Technologies)
+* [ETL](#ETL)
+* [Visualization](#Visualization)
+* [Troubleshooting](#Troubleshooting)
+
+# Objective | Build a web application that scrapes various websites for data related to the Mission to Mars and displays the information in a single HTML page.
 
 ## Step 1 - Scraping
 
