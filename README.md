@@ -52,20 +52,30 @@ news_p
 
 * Use splinter to navigate the site and find the image url for the current Featured Mars Image and assign the url string to a variable called `featured_image_url`.
 
-```python
-# Example:
-featured_image_url = 'https://www.jpl.nasa.gov/spaceimages/images/largesize/PIA16225_hires.jpg'
+```
+#cleaning up the URL for the most recent featured image from the webpage.
+mars='?search=&category=Mars'
+# Use Base URL to Create Absolute URL
+feimg_url = f"https://www.jpl.nasa.gov{image}"
+print(feimg_url)
 ```
 
 ### Mars Weather
 
 * Visit the Mars Weather twitter account [here](https://twitter.com/marswxreport?lang=en) and scrape the latest Mars weather tweet from the page. Save the tweet text for the weather report as a variable called `mars_weather`.
-* **Note: Be sure you are not signed in to twitter, or scraping may become more difficult.**
-* **Note: Twitter frequently changes how information is presented on their website. If you are having difficulty getting the correct html tag data, consider researching Regular Expression Patterns and how they can be used in combination with the .find() method.**
 
-```python
-# Example:
-mars_weather = 'Sol 1801 (Aug 30, 2017), Sunny, high -21C/-5F, low -80C/-112F, pressure at 8.82 hPa, daylight 06:09-17:55'
+```
+#Looking for all paragraph statements in returned object
+mars_weather_tweet = tw_soup.find_all('p', class_ = "")
+twite=mars_weather_tweet[0].text.strip()
+
+
+results = tw_soup.find_all('div', class_="")
+#tweet = results.find("p", class_="TweetTextSize TweetTextSize--normal js-tweet-text tweet-text")
+#tweet_split = tweet.rsplit("pic")
+#mars_weather = tweet_split[0]
+#print(mars_weather)
+print(results)
 ```
 
 ### Mars Facts
@@ -73,6 +83,16 @@ mars_weather = 'Sol 1801 (Aug 30, 2017), Sunny, high -21C/-5F, low -80C/-112F, p
 * Visit the Mars Facts webpage [here](https://space-facts.com/mars/) and use Pandas to scrape the table containing facts about the planet including Diameter, Mass, etc.
 
 * Use Pandas to convert the data to a HTML table string.
+
+```
+#facts table setup
+fact_url = 'https://space-facts.com/mars/'
+facts_table = pd.read_html(fact_url)
+factual_df = facts_table[0]
+factual_df.columns = ["Category", "Measurement"]
+factual_df = factual_df.set_index("Category")
+factual_df
+```
 
 ### Mars Hemispheres
 
