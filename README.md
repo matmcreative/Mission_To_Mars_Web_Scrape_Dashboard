@@ -81,9 +81,6 @@ print(results)
 ### Mars Facts
 
 * Visit the Mars Facts webpage [here](https://space-facts.com/mars/) and use Pandas to scrape the table containing facts about the planet including Diameter, Mass, etc.
-
-* Use Pandas to convert the data to a HTML table string.
-
 ```
 #facts table setup
 fact_url = 'https://space-facts.com/mars/'
@@ -92,6 +89,12 @@ factual_df = facts_table[0]
 factual_df.columns = ["Category", "Measurement"]
 factual_df = factual_df.set_index("Category")
 factual_df
+```
+* Use Pandas to convert the data to a HTML table string.
+
+```
+tablefacts=factual_df.to_html()
+tablefacts
 ```
 
 ### Mars Hemispheres
