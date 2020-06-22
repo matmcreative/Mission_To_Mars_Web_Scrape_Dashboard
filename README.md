@@ -172,3 +172,7 @@ def home():
 
 ![final_app_part1.png](mission_to_mars/Images/final_app_part1.png)
 ![final_app_part2.png](mission_to_mars/Images/final_app_part2.png)
+
+# Troubleshooting
+ 
+* Because I have multiple versions of Python installed, I initially ran into trouble with importing Beautiful Soup because my kernal was running in Python 3.8 but BS4 would only run in Python 3.
