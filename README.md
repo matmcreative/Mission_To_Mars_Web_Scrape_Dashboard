@@ -126,14 +126,47 @@ print(imgs_soup)
 Use MongoDB with Flask templating to create a new HTML page that displays all of the information that was scraped from the URLs above.
 
 * Start by converting your Jupyter notebook into a Python script called `scrape_mars.py` with a function called `scrape` that will execute all of your scraping code from above and return one Python dictionary containing all of the scraped data.
+```
+def scrape():
+    browser = init_browser()
+    # Create mars_data dict that we can insert into mongoDB
+    mars_data = {}
+```
 
 * Next, create a route called `/scrape` that will import your `scrape_mars.py` script and call your `scrape` function.
 
-  * Store the return value in Mongo as a Python dictionary.
+```
+# Route that will trigger the scrape function
+@app.route("/scrape")
+def scrape():
+```
+* Store the return value in Mongo as a Python dictionary.
+```
+# Run the scrape function
+    costa_data = scrape_mars.scrape()
+
+    # Update the Mongo database using update and upsert=True
+   
+    mongo.db.collection.update({}, costa_data, upsert=True)
+
+    # Redirect back to home page
+    return redirect("/")
+```
 
 * Create a root route `/` that will query your Mongo database and pass the mars data into an HTML template to display the data.
+```
+# Route to render index.html template using data from Mongo
+@app.route("/")
+def home():
 
-* Create a template HTML file called `index.html` that will take the mars data dictionary and display all of the data in the appropriate HTML elements. Use the following as a guide for what the final product should look like, but feel free to create your own design.
+    # Find one record of data from the mongo database
+    final_dict = mongo.db.collection.find_one()
+
+    # Return template and data
+    return render_template("index.html", final_dict = final_dict)
+```
+
+* Create a template HTML file called `index.html` that will take the mars data dictionary and display all of the data in the appropriate HTML elements. 
 
 ![final_app_part1.png](mission_to_mars/Images/final_app_part1.png)
 ![final_app_part2.png](mission_to_mars/Images/final_app_part2.png)
