@@ -168,5 +168,7 @@ def home():
 
 * Create a template HTML file called `index.html` that will take the mars data dictionary and display all of the data in the appropriate HTML elements. 
 
+# Visualization
+
 ![final_app_part1.png](mission_to_mars/Images/final_app_part1.png)
 ![final_app_part2.png](mission_to_mars/Images/final_app_part2.png)
