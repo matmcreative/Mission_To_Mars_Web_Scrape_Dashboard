@@ -15,11 +15,15 @@ Build a web application that scrapes various websites for data related to the Mi
 # Technologies
 * HTML5
 * CSS
+* BeautifulSoup
+* Pandas
+* Splinter
+* MongoDB
 
 # Process
 
 ## Step 1 - Scraping
-Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
+Complete initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, and Requests/Splinter.
 
 * Create a Jupyter Notebook file called `mission_to_mars.ipynb` and use this to complete all of your scraping and analysis tasks. The following outlines what you need to scrape.
 
@@ -27,11 +31,19 @@ Complete your initial scraping using Jupyter Notebook, BeautifulSoup, Pandas, an
 
 * Scrape the [NASA Mars News Site](https://mars.nasa.gov/news/) and collect the latest News Title and Paragraph Text. Assign the text to variables that you can reference later.
 
-```python
-# Example:
-news_title = "NASA's Next Mars Mission to Investigate Interior of Red Planet"
-
-news_p = "Preparation of NASA's next spacecraft to Mars, InSight, has ramped up this summer, on course for launch next May from Vandenberg Air Force Base in central California -- the first interplanetary launch in history from America's West Coast."
+```
+# results are returned as an iterable list
+titles = soup.find_all('div', class_="content_title")
+#print(titles[0])
+news_titles=titles[0].text.strip()
+print(news_titles)
+```
+```
+# results are returned as an iterable list
+descs = soup.find_all('div', class_="rollover_description_inner")
+#print(descs[0])
+news_p=descs[0].text.strip()
+news_p
 ```
 
 ### JPL Mars Space Images - Featured Image
