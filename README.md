@@ -5,7 +5,7 @@
 ## Table of Contents
 * [Objective](#Objective)
 * [Technologies](#Technologies)
-* [Process](#Technologies)
+* [Process](#Process)
 * [Visualization](#Visualization)
 * [Troubleshooting](#Troubleshooting)
 
