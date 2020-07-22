@@ -1,4 +1,4 @@
-# Web Scraping Challenge - Mission to Mars
+# Mission to Mars - Web Scraping
 
 <img src="mission_to_mars/Images/mission_to_mars.png" width=350 align=right>
 
